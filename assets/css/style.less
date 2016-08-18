@@ -1,0 +1,195 @@
+////////////////////////////
+////// FONT VARIABLES ////// 
+////////////////////////////
+
+.body-copy {	font-family: "freight-display-pro",sans-serif; font-style: normal; font-weight: 400;}
+.detail-font {	font-family: "proxima-nova",sans-serif; font-style: normal; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
+.bold-detail-font {		font-family: "proxima-nova",sans-serif; font-style: normal; font-weight: 700;}
+
+////////////////////////////
+////// COLOR VARIABLES /////
+////////////////////////////
+
+// @primary: #CCCCCC;
+
+
+
+////////////////////////////
+////// WIDTH VARIABLES /////
+////////////////////////////
+
+// change values according to design; max-width of overall content should be around 1600px
+.skinny-cont {	width: 60%; margin: 0 auto; max-width: 960px;}
+.wide-cont {	width: 95%; margin: 0 auto; max-width: 1360px;}
+
+
+////////////////////////////
+/////// MEDIA QUERIES //////
+////////////////////////////
+// change or add values according to design
+@tablet: ~"only screen and (max-width: 990px)";
+@phone: ~"only screen and (max-width: 630px)";
+
+.desktop {	display: block;
+	@media @tablet {display: none}
+}
+.mobile {	display: none;
+	@media @tablet {	display: block;}
+}
+
+////////////////////////////
+///// BROWSER MIXINS ///////
+////////////////////////////
+.transition(@transition) {-webkit-transition:@transition;-moz-transition:@transition;-ms-transition:@transition;-o-transition:@transition; }
+.transform(@string){transform:@string;-webkit-transform:@string;-moz-transform:@string;-ms-transform:@string;-o-transform:@string;}
+.transform-origin(@string) {-webkit-transform-origin:@string; -moz-transform-origin: @string; -ms-transform-origin: @string; transform-origin: @string;}
+.browser-appearance(@string) {-webkit-appearance: @string;-moz-appearance:@string;appearance:@string;}
+.flex {	display: -webkit-box; display: -moz-box;display: -ms-flexbox; display: -webkit-flex; display: flex; align-items: center;justify-content: space-around;
+	&.wrap {	flex-wrap: wrap;}
+	&.between {	justify-content: space-between;}
+	&.stretch {	align-items: stretch;}
+	&.tablet-wrap {
+		@media @tablet {	flex-wrap: wrap;}
+	}
+	&.phone-wrap {
+		@media @phone {	flex-wrap: wrap;}
+	}
+}
+
+
+////////////////////////////
+//// LINKS & INPUTS ////////
+////////////////////////////
+a {	.transition(all 0.2s ease); text-decoration: none; color: inherit; cursor: pointer;
+	// &:hover {	color: @hover;}
+}
+// class for links that should not use universal link styling (link blocks, etc)
+a.link-fix {	color: inherit; text-decoration: none;}
+
+.button, button, input[type="submit"] {	 padding: 15px 25px; color: white; text-decoration: none; border: 0; .transition(all 0.2s ease); cursor: pointer; .browser-appearance(none); border-radius: 0;
+	&:hover {	color: white; }
+}
+label {}
+
+input[type="text"], input[type="email"], input[type="password"],input[type="tel"], textarea, select {	.browser-appearance(none);  border-radius: 0; background: white; padding: 10px; resize: none; width: 100%; }
+
+
+////////////////////////////
+//////// HEADINGS //////////
+////////////////////////////
+h1, .h1 { margin: 0; .body-copy; font-size: 62px;}
+h2, .h2 { margin: 0; .body-copy; font-size: 40px;}
+h3, .h3 { margin: 0; .body-copy; font-size: 32px;}
+h4, .h4 { margin: 0; .detail-font; font-size: 12px;}
+p { margin: 15px auto; font-size: 20px; line-height: 24px;}
+
+////////////////////////////
+////////// IMAGES //////////
+////////////////////////////
+
+.logo img {	max-width: 175px;}
+.hamburger img {	max-width: 37px;}
+
+
+////////////////////////////
+////////// NORMALIZE ///////
+////////////////////////////
+body {	width: 100%; height: 100%; overflow-x: hidden; .body-copy}
+body * {  box-sizing: border-box;}
+img {	max-width: 100%; height: auto;}
+table, .table {	border-collapse: collapse;}
+*:focus { border: 0;  outline:none;}
+select:focus {	border: initial;}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0; }
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] {-moz-appearance: textfield;}
+ul {	margin: 0;}
+.table {	display: table;}
+.table-cell {	display: table-cell; vertical-align: middle;}
+.row {	display: table-row;}
+.left {	display: left;}
+.right {	display: right;}
+.center {	display: center;}
+.section {	padding: 70px 0;
+	&.notop {	padding-top: 0;}
+	&.nobottom {	padding-bottom: 0;}
+	&.phone-nobottom {
+		@media @phone {	padding-bottom: 0;}
+	}
+}
+.half-with-space {	width: 42%;}
+.half {	width: 50%;}
+.iframe-container { position: relative; padding-bottom: 50.25%; padding-top: 35px; height: 0; overflow: hidden; 
+	iframe, video {	position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+}
+.tablet-full {	
+	@media @tablet {	width: 100%;}
+}
+.phone-full {
+	@media @phone {	width: 100%;}
+}
+
+
+
+////////////////////////////
+////////// HEADER //////////
+////////////////////////////
+
+header {	position: absolute; top: 0; left: 0; width: 100%; padding-top: 30px; z-index: 2;}
+
+
+////////////////////////////
+////////// GLOBAL //////////
+////////////////////////////
+.hero { min-height: 700px;
+	.half {	position: relative; overflow: hidden;}
+	.half:first-child {	padding: 70px 2.5%; align-self: center;}
+	iframe, video {	position: absolute; top: 0; left: 50%; .transform(translate(-50%, 0)); height: 100%;}
+}
+
+////////////////////////////
+///////// HOMEPAGE /////////
+////////////////////////////
+.homepage-copy { .hero;
+	p {	font-size: 36px; line-height: 42px;}
+}
+
+.instafeed-wrapper { position: relative;
+	.insta { border: 10px solid white; display: block;
+		&:first-child, &:last-child {	position: absolute; width: 30%;}
+		&:nth-child(2) {	width: 50%; margin: 0 auto;}
+		&:first-child {	left: 0; top: 10%;}
+		&:last-child {	right: 0; bottom: 10%;}
+		img {	display: block;}
+	}
+	.handle {	position: absolute; width: 30%; right: 0; text-align: center; top: 10%;}
+	i {	font-size: 22px; vertical-align: top; margin-right: 5px;}
+}
+
+.case-studies-homepage {
+	.flex {	position: relative; margin: 30px auto;}
+	.small-picture {	padding: 30px 2.5%;}
+	.content {	position: absolute; right: 0; top: 50%; .transform(translate(0, -50%)); background-color: white; padding: 40px; width: 40%;}
+	hr {	border: 0; background-color: black; height: 2px; width: 50px; margin: 20px 0;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
