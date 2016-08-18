@@ -136,6 +136,21 @@ ul {	margin: 0;}
 ////////////////////////////
 
 header {	position: absolute; top: 0; left: 0; width: 100%; padding-top: 30px; z-index: 2;}
+.hamburger { width: 35px; height :35px; position: relative; border: 2px solid black; border-radius: 100%; padding: 3px;
+	span, span:before, span:after {	cursor: pointer;border-radius: 1px;height: 2px;width: 16px;background: black;position: absolute;display: block;content: ''; z-index: 5; .transition(all 500ms ease-in-out;); left: 50%; .transform(translate(-50% ,0));}
+	span {	top: 49%; .transform(translate(-50%, -49%));}
+	span:before {	top: -4px;}
+	span:after {	top: 4px;}
+	&:hover {	padding: 0;}
+	&.active {
+		span:before, span:after {	top: 0;}
+		span:before {	.transform(rotate(45deg translate(-50% ,0)))}
+		span:after {	.transform(rotate(-45deg translate(-50% ,0)))}
+	}
+	&.white { border-color: white;
+		span, span:before, span:after {	background: white;}
+	}
+}
 
 
 ////////////////////////////

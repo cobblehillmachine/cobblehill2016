@@ -32,7 +32,9 @@
 	<header>
 		<div class="flex between wide-cont">
 			<div class="logo"><a href="/"><img src="<?php echo get_template_directory_uri() ?>/assets/images/logo.png"></a></div>
-			<div class="hamburger"><img src="<?php echo get_template_directory_uri() ?>/assets/images/hamburger-black.png"></div>
+			<div class="hamburger">
+				<span></span>
+			</div>
 		</div>
 	</header>
 	<div class="body-wrapper">	
