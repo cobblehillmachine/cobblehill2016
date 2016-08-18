@@ -1,29 +1,26 @@
 <?php get_header(); ?>
+<div id="fullpage">
 
-<div class="hero flex stretch">
-	<div class="half">
-		<h1><?php the_field('headline') ?></h1>
-	</div>
-	<div class="half">
-		<!-- <div class="iframe-container"> -->
-			<video autoplay="true" loop="true" preload="auto" muted="true">
-			  <source src="<?php echo get_template_directory_uri(); ?>/assets/images/cobble-hill-video.mp4" type="video/mp4">
-			  <source src="<?php echo get_template_directory_uri(); ?>/assets/images/cobble-hill-video.ogv" type="video/ogv">
-			  <source src="<?php echo get_template_directory_uri(); ?>/assets/images/cobble-hill-video.webm" type="video/webm">
-					<!--[if IE]><div style='clear: both; height: 112px; padding:0; position: relative;'><a href="http://www.theie8countdown.com/ie-users-info"><img src="http://www.theie8countdown.com/assets/badge_iecountdown.png" border="0" height="112" width="348" alt="" /></a></div><![endif]-->
-			</video>
-		<!-- </div> -->
+<div class="hero fullpage-section">
+	<div class="flex stretch hero">
+		<div class="half">
+			<h1><?php the_field('headline') ?></h1>
+		</div>
+		<div class="half">
+			<canvas id="video"></canvas>
+		</div>
 	</div>
 </div>
 
-<div class="skinny-cont section homepage-copy flex center">
+<div class="skinny-cont  homepage-copy flex center fullpage-section">
 	<div><?php the_field('main_copy') ?></div>
 </div>
 
-<div class="case-studies-homepage">
+<!-- <div class="case-studies-homepage"> -->
 	<?php $featured_case_studies = new WP_query(array('post_type' => 'Case Studies', 'meta_key' => 'featured_on_homepage', 'meta_value' => 1)); ?>
 	<?php while ( $featured_case_studies->have_posts() ) : $featured_case_studies->the_post();?>
-		<a class="flex" href="<?php the_permalink() ?>">
+		<a class=" fullpage-section " href="<?php the_permalink() ?>">
+		<div class="flex case-study-homepage">
 			<div class="big-picture">
 				<img src="<?php the_field('big_picture') ?>">
 			</div>
@@ -35,15 +32,30 @@
 				<hr>
 				<p><?php the_field('preview_text') ?></p>
 			</div>
+			</div>
 		</a>
 		
 
 	<?php endwhile; wp_reset_query(); ?>
-</div>
+<!-- </div> -->
 
-<div class="wide-cont instafeed-wrapper">
+<div class="wide-cont instafeed-wrapper fullpage-section">
 	<div id="instafeed"></div>
 	<div class="handle detail-font"><a href="http://instagram.com/cobble_hill" target=_blank><i class="fa fa-instagram"></i>cobble_hill</a></div>
 </div>
+
+</div>
+
+<script src="<?php echo get_template_directory_uri() ?>/assets/js/whitewater.js"></script>
+<script type="text/javascript">
+	var canvas = document.getElementById('video');
+    var source = '<?php echo get_template_directory_uri() ?>/assets/images/cobble-hill-video-new';
+    var options = {
+        autoplay: true,
+        loop: true,
+        controls: true
+    }
+    var video = new Whitewater(canvas, source, options);
+</script>
 	
 <?php get_footer(); ?>

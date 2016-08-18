@@ -2,6 +2,7 @@ var $ = jQuery.noConflict();
 
 $( window ).load(function() {
 	hpInstagram();
+	fullPage();
 	if ($(window).width() > 990) {
 		
 	} else {
@@ -68,7 +69,15 @@ function hpInstagram() {
     feed.run();
 }
 
+function fullPage() {
+	$('#fullpage').fullpage({
+		verticalCentered: true,
+        //Custom selectors
+        sectionSelector: '.fullpage-section',
+        fixedElements: 'header'
 
+    });
+}
 
 
 
