@@ -3,6 +3,7 @@ var $ = jQuery.noConflict();
 $( window ).load(function() {
 	hpInstagram();
 	fullPage();
+	navToggle();
 	if ($(window).width() > 990) {
 		
 	} else {
@@ -79,5 +80,10 @@ function fullPage() {
     });
 }
 
-
+function navToggle() {
+	$('.hamburger').on('click', function() {
+		$('.desktop-nav').slideToggle();
+		$('header').toggleClass('open');
+	})
+}
 

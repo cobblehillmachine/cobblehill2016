@@ -128,6 +128,10 @@ function create_post_type() {
   	flush_rewrite_rules();
 }
 
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
 
 
 

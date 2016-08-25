@@ -28,6 +28,42 @@
 
 </head>
 <body <?php body_class(); ?>>
+	<div class="desktop-nav">
+		<div class="table">
+			<div class="table-cell contact">
+				<div>
+					<?php $encoded_address = urlencode(get_field('address_1', 'options').'+'.get_field('address_2', 'options').'+'.get_field('city', 'options').'+'.get_field('state', 'options').'+'.get_field('zip', 'options')); ?>
+					<h4>Main Office</h4>
+					<p>
+						<a href="https://www.google.com/maps/place/<?php echo $encoded_address ?>" target=_blank>
+							<?php the_field('address_1', 'options') ?>, <?php the_field('address_2', 'options') ?><br><?php the_field('city', 'options') ?>, <?php the_field('state', 'options') ?> <?php the_field('zip', 'options') ?>
+						</a>
+					</p>
+				</div>
+				<div>
+					<h4>Phone</h4>
+					<p><?php the_field('phone_number', 'options') ?></p>
+				</div>
+				<div>
+					<h4>Email</h4>
+					<p><a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a></p>
+				</div>
+				<div>
+					<h4>Social Media</h4>
+					<ul class="inline">
+						<li><a href="<?php the_field('instagram_link', 'options') ?>"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="<?php the_field('pinterest_link', 'options') ?>"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="<?php the_field('twitter_link', 'options') ?>"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="<?php the_field('facebook_link', 'options') ?>"><i class="fa fa-facebook"></i></a></li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="table-cell nav">
+				<?php wp_nav_menu(array('menu' => 'Main Nav')); ?>
+			</div>
+		</div>
+	</div>
 	
 	<header>
 		<div class="flex between wide-cont">
