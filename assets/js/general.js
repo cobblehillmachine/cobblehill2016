@@ -83,6 +83,7 @@ function fullPage() {
 function navToggle() {
 	$('.hamburger').on('click', function() {
 		$('.desktop-nav').slideToggle();
+		$('.hamburger').toggleClass('active');
 		$('header').toggleClass('open');
 	})
 }

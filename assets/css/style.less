@@ -151,7 +151,8 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 	span:after {	top: 4px;}
 	&:hover {	padding: 0;}
 	&.active {
-		span:before, span:after {	top: 0;}
+		span  {	background-color: black;}
+		span:before, span:after {	top: 0; left: 0;background-color: white; }
 		span:before {	.transform(rotate(45deg) translate(0,0))}
 		span:after {	.transform(rotate(-45deg) translate(0,0))}
 	}
