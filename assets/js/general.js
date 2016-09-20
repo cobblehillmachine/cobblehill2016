@@ -5,7 +5,8 @@ $( window ).load(function() {
 	hpInstagram();
 	fullPage();
 	navToggle();
-	$('.desktop-nav').css('height', windowHeight);
+	$('.desktop-nav, .city-guide-archive .half').css('height', windowHeight);
+
 	if ($(window).width() > 990) {
 		
 	} else {
