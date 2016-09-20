@@ -47,6 +47,20 @@
 	</div>
 </div>
 
+<div class="fullpage-section">
+	<div class="ctas flex stretch wide-cont">
+		<a class="half shop" href="shop">
+			<p>Dress like its summer friday.</p>
+			<span class="link">visit our store</span>
+		</a>
+		<a class="half city-guide center" href="/city-guides">
+			<img src="<?php the_field('city_guide_cta_image') ?>">
+			<p><?php the_field('city_guide_cta_text') ?></p>
+			<span class="link">Explore our city guides</span>
+		</a>
+	</div>
+</div>
+
 
 <div class="wide-cont instafeed-wrapper fullpage-section">
 	<div id="instafeed"></div>
@@ -55,7 +69,7 @@
 
 </div>
 
-<script src="<?php echo get_template_directory_uri() ?>/assets/js/whitewater.js"></script>
+<!-- <script src="<?php echo get_template_directory_uri() ?>/assets/js/whitewater.js"></script>
 <script type="text/javascript">
 	var canvas = document.getElementById('video');
     var source = '<?php echo get_template_directory_uri() ?>/assets/images/cobble-hill-video-new';
@@ -65,6 +79,6 @@
         controls: true
     }
     var video = new Whitewater(canvas, source, options);
-</script>
+</script> -->
 	
 <?php get_footer(); ?>
