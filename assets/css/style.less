@@ -193,15 +193,15 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 }
 
 .instafeed-wrapper { position: relative;
-	.insta {  display: block;
-		&:first-child, &:last-child {	position: absolute; width: 30%;border: 10px solid white;}
-		&:nth-child(2) {	width: 50%; margin: 0 auto;}
-		&:first-child {	left: 0; top: 10%;}
-		&:last-child {	right: 0; bottom: 10%;}
+	.insta {  display: block;width: 25%; height: 300px; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%;
+		// &:first-child, &:last-child {	position: absolute; width: 30%;border: 10px solid white;}
+		// &:nth-child(2) {	width: 50%; margin: 0 auto;}
+		// &:first-child {	left: 0; top: 10%;}
+		// &:last-child {	right: 0; bottom: 10%;}
 		img {	display: block;}
 	}
-	.handle {	position: absolute; width: 30%; right: 0; text-align: center; top: 10%;}
-	i {	font-size: 22px; vertical-align: top; margin-right: 5px;}
+	// .handle {	position: absolute; width: 30%; right: 0; text-align: center; top: 10%;}
+	// i {	font-size: 22px; vertical-align: top; margin-right: 5px;}
 }
 
 .case-study-homepage { width: 32%; display: block; margin-top: 40px;
@@ -222,7 +222,7 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 }
 
 ////////////////////////////
-/// CITY GUIDE ARCHIVE /////
+//////// CITY GUIDE ////////
 ////////////////////////////
 
 .city-guide-archive {
@@ -247,15 +247,52 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 	li {	width: 33%; .detail-font; margin-bottom: 12px; font-size: 14px;}
 }
 
+////////////////////////////
+/////// CASE STUDIES ///////
+////////////////////////////
 
 
+.case-study-archive { width: 32%;}
 
+.case-study-page {
+	> div {	width: 100%;
+		&[data-order="1"] {	order: 1;}
+		&[data-order="2"] {	order: 2;}
+		&[data-order="3"] {	order: 3;}
+		&[data-order="4"] {	order: 4;}
+		&[data-order="5"] {	order: 5;}
+		&[data-order="6"] {	order: 6;}
+		&[data-order="7"] {	order: 7;}
+		&[data-order="8"] {	order: 8;}
+	}
+	.background-image {	background-repeat: no-repeat; background-size: cover; background-position: 50% 50%;}
+	.big-picture {	width: 66%;}
+	.small-picture {	width: 33%; padding-right: 30px; padding-left: 30px;}
+	p {	line-height: 30px;}
+	h2:after {	content: ''; width: 50px; height: 1px; background-color: black; border: 0; display: block; margin: 20px 0;}
 
+}
 
+.full-width-text-on-color { padding: 150px 5%;
+	h3 {	color: white; margin: 0 auto;}
+}
 
+.two_thirds_images_with_content { position: relative; padding: 10px 0;
+	.content {	position: absolute; top: 50%; .transform(translate(0, -50%)); right: 30px; background-color: white; width: 550px; padding: 40px;}
+}
 
+.collage_with_content { padding: 10px 0;
+	img {	width: 25%; height: auto; align-self: flex-start;}
+	.section {	padding: 70px 8%;}
+}
 
+.full_width_stacked_content_and_image {
+	h2:after {	margin: 20px auto;}
+}
 
-
+.icons {
+	img {	max-width: 100px; }
+	.half {	padding: 0 5%;}
+}
 
 

@@ -62,9 +62,9 @@
 </div>
 
 
-<div class="wide-cont instafeed-wrapper fullpage-section">
-	<div id="instafeed"></div>
-	<div class="handle detail-font"><a href="http://instagram.com/cobble_hill" target=_blank><i class="fa fa-instagram"></i>cobble_hill</a></div>
+<div class="instafeed-wrapper fullpage-section">
+	<div id="instafeed" class="flex wrap wide-cont stretch"></div>
+	<!-- <div class="handle detail-font"><a href="http://instagram.com/cobble_hill" target=_blank><i class="fa fa-instagram"></i>cobble_hill</a></div> -->
 </div>
 
 </div>

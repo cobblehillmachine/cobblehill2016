@@ -11,6 +11,7 @@ $( window ).load(function() {
 		var target = $(this).attr('href');
 		smoothScroll($(target), 0);
 	})
+
 	if ($(window).width() > 990) {
 		
 	} else {
@@ -69,9 +70,9 @@ function hpInstagram() {
         get: 'user',
         userId: 49967275,
         sortBy: 'most-recent',
-        limit: 3,
+        limit: 8,
         resolution: 'standard_resolution',
-        template: '<a class="insta" href="{{link}}" target=_blank><img src="{{image}}"></a>'
+        template: '<a class="insta" href="{{link}}" target=_blank style="background-image:url({{image}})"></a>'
 
     });
     feed.run();
