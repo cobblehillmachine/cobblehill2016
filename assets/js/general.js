@@ -1,9 +1,11 @@
 var $ = jQuery.noConflict();
 
 $( window ).load(function() {
+	var windowHeight = $(this).height();
 	hpInstagram();
 	fullPage();
 	navToggle();
+	$('.desktop-nav').css('height', windowHeight);
 	if ($(window).width() > 990) {
 		
 	} else {

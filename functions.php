@@ -125,6 +125,18 @@ function create_post_type() {
 	);
   	register_post_type( 'Case Studies', $args1);
 
+  	$args1 = array(
+		'labels' => array(
+			'name' => __( 'City Guides' ),
+			'singular_name' => __( 'City Guide' )
+		),
+		'public' => true,
+		'menu_icon' => 'dashicons-location-alt',
+		'publicly_queryable'  => true,
+		'supports' => array( 'title', 'thumbnail' )
+	);
+  	register_post_type( 'City Guides', $args1);
+
   	flush_rewrite_rules();
 }
 
