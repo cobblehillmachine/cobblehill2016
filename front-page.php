@@ -1,43 +1,52 @@
 <?php get_header(); ?>
 <div id="fullpage">
 
-<div class="hero fullpage-section">
-	<div class="flex stretch hero">
-		<div class="half">
-			<h1><?php the_field('headline') ?></h1>
-		</div>
-		<div class="half">
-			<canvas id="video"></canvas>
-		</div>
-	</div>
+<div class="hero fullpage-section" style="background-image:url(<?php the_post_thumbnail_url() ?>)"">
+
 </div>
 
 <div class="skinny-cont  homepage-copy flex center fullpage-section">
 	<div><?php the_field('main_copy') ?></div>
 </div>
 
-<!-- <div class="case-studies-homepage"> -->
-	<?php $featured_case_studies = new WP_query(array('post_type' => 'Case Studies', 'meta_key' => 'featured_on_homepage', 'meta_value' => 1)); ?>
+<div class="services fullpage-section homepage">
+	<div class="section">
+		<h2 class="center">Services</h2>
+
+		<?php if (have_rows('service', 9)) : ?>
+			<div class="flex wrap stretch wide-cont">
+			<?php while( have_rows('service', 9) ): the_row(); ?>
+				<div class="service">
+					<h3><?php the_sub_field('name') ?></h3>
+					<?php the_sub_field('list_of_services') ?>
+				</div>
+			<?php endwhile; ?>
+			</div>
+	<?php endif; ?>
+	</div>
+</div>
+
+
+<?php $featured_case_studies = new WP_query(array('post_type' => 'Case Studies', 'meta_key' => 'featured_on_homepage', 'meta_value' => 1)); ?>
+<div class="fullpage-section">
+	<h2 class="center">Recent Work</h2>
+	<div class="flex between wide-cont">
 	<?php while ( $featured_case_studies->have_posts() ) : $featured_case_studies->the_post();?>
-		<a class=" fullpage-section " href="<?php the_permalink() ?>">
-		<div class="flex case-study-homepage">
-			<div class="big-picture">
-				<img src="<?php the_field('big_picture') ?>">
+		
+		<a class="case-study-homepage center" href="<?php the_permalink() ?>">
+			<div class="picture">
+				<img src="<?php the_field('picture') ?>">
 			</div>
-			<div class="small-picture">
-				<img src="<?php the_field('small_picture') ?>">
-			</div>
-			<div class="content">
-				<h2><?php the_title() ?></h2>
-				<hr>
-				<p><?php the_field('preview_text') ?></p>
-			</div>
-			</div>
+			<h3 class="h4 center"><?php the_title() ?></h3>
+
 		</a>
+		
 		
 
 	<?php endwhile; wp_reset_query(); ?>
-<!-- </div> -->
+	</div>
+</div>
+
 
 <div class="wide-cont instafeed-wrapper fullpage-section">
 	<div id="instafeed"></div>
