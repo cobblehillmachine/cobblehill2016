@@ -3,6 +3,18 @@
 <?php $topics = array('eat', 'drink','shop','explore','stay') ?>
 <?php $i = 0; ?>
 
+<div class="hero city-guide-hero" style="background-image:url(<?php the_field('hero_image') ?>)"">
+	<div class="content half absolute white">
+		<h1><?php the_field('intro_headline') ?></h1>
+		<?php the_field('intro_text') ?>
+		<ul class="flex wrap">
+		<?php foreach ($topics as $topic) { ?>
+			<li><a class="smooth-scroll" href="#<?php echo $topic ?>"><?php echo $topic ?></a></li>
+		<?php } ?>
+		</ul>
+	</div>
+</div>
+
 <?php foreach ($topics as $topic) { ?>
 
 

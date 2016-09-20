@@ -172,9 +172,13 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 ////////////////////////////
 ////////// GLOBAL //////////
 ////////////////////////////
-.hero { min-height: 700px;
+.hero { min-height: 700px; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%;
 	.half {	position: relative; overflow: hidden;}
 	.half:first-child {	padding: 70px 2.5%; align-self: center;}
+	.absolute {	position: absolute; top: 50%; .transform(translate(0, -50%)); left: 50%;
+		p {	line-height: 30px;}
+	}
+	.white * {	color: white;}
 	canvas {	position: absolute; top: 0; left: 50%; .transform(translate(-50%, 0)); height: 100%;}
 }
 
@@ -225,7 +229,11 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 	.location {	margin: 15px 0;}
 }
 
-
+.city-guide-hero {
+	.flex {	justify-content: flex-start; -webkit-justify-content: flex-start;}
+	ul {	margin-top: 30px;}
+	li {	width: 33%; .detail-font; margin-bottom: 12px; font-size: 14px;}
+}
 
 
 
