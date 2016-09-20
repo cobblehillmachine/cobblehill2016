@@ -18,8 +18,9 @@
 				<div class="half section">
 					<h2><?php echo $topic ?></h2>
 					<?php while( have_rows($topic) ): the_row(); ?>
-						<?php get_template_part('content', 'city-guide') ?>
-						
+						<div class="location">
+							<?php get_template_part('content', 'city-guide') ?>
+						</div>
 					<?php endwhile; ?>
 				</div>
 				<?php if ($i % 2 != 0) { ?>
