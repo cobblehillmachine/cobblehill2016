@@ -1,0 +1,41 @@
+<?php get_header() ?>
+
+<?php $topics = array('eat', 'drink','shop','explore','stay') ?>
+<?php $i = 0; ?>
+
+<?php foreach ($topics as $topic) { ?>
+
+
+	<?php if (have_rows($topic)) : ?>
+		<div class="city-guide" id="<?php echo $topic ?>">
+			<div class="flex stretch wrap">
+				<?php if ($i % 2 == 0) { ?>
+					<div class="half background" style="background-image:url(<?php the_field($topic.'_photo') ?>"></div>
+				<?php } else { ?>
+					<div class="half mobile background" style="background-image:url(<?php the_field($topic.'_photo') ?>"></div>
+				<?php } ?>
+				
+				<div class="half section">
+					<h2><?php echo $topic ?></h2>
+					<?php while( have_rows($topic) ): the_row(); ?>
+						<?php get_template_part('content', 'city-guide') ?>
+						
+					<?php endwhile; ?>
+				</div>
+				<?php if ($i % 2 != 0) { ?>
+					<div class="half background" style="background-image:url(<?php the_field($topic.'_photo') ?>"></div>
+				<?php } ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<?php $i++; ?>
+<?php } ?>
+
+
+
+
+
+
+
+<?php get_footer() ?>

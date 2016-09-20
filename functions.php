@@ -133,6 +133,7 @@ function create_post_type() {
 		'public' => true,
 		'menu_icon' => 'dashicons-location-alt',
 		'publicly_queryable'  => true,
+		'rewrite' => array('slug'=>'city-guides'),
 		'supports' => array( 'title', 'thumbnail' )
 	);
   	register_post_type( 'City Guides', $args1);
