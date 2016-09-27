@@ -5,7 +5,7 @@ $( window ).load(function() {
 	hpInstagram();
 	fullPage();
 	navToggle();
-	$('.desktop-nav, .city-guide-archive .half, .city-guide-hero').css('height', windowHeight);
+	$('.desktop-nav, .city-guide-hero').css('height', windowHeight);
 	$('.smooth-scroll').on('click', function(e) {
 		e.preventDefault();
 		var target = $(this).attr('href');

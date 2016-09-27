@@ -121,7 +121,7 @@ function create_post_type() {
 		'public' => true,
 		'menu_icon' => 'dashicons-star-filled',
 		'publicly_queryable'  => true,
-		'rewrite' => array('slug'=>'case-studies'),
+		'rewrite' => array('slug'=>'work'),
 		'supports' => array( 'title' )
 	);
   	register_post_type( 'Case Studies', $args1);
