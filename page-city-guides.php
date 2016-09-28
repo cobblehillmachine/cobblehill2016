@@ -7,7 +7,7 @@
 	<?php $cityguides = new WP_query(array('post_type' => 'City Guides')); ?>
 	<?php while ( $cityguides->have_posts() ) : $cityguides->the_post();?>
 			
-		<a href="<?php the_permalink() ?>" class="half-with-space center">
+		<a href="<?php the_permalink() ?>" class="half-with-space center <?php the_title() ?>">
 			<?php the_post_thumbnail() ?>
 			<p><?php the_field('archive_copy') ?></p>
 			<h2 class="h4"><?php the_field('tagline') ?></h2>
