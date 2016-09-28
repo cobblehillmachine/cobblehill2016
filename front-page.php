@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div id="fullpage">
 
-<div class="hero fullpage-section" style="background-image:url(<?php the_post_thumbnail_url() ?>)"">
+<div class="hero fullpage-section">
 	<div class="videoWrapper">
 		<video data-keepplaying  data-autoplay autoplay="true" loop="true" preload="auto" muted="true">
 		  <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/homepage-video-header.mp4" type="video/mp4">
