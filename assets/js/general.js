@@ -82,8 +82,8 @@ function fullPage() {
 	$('#fullpage').fullpage({
 		verticalCentered: true,
         //Custom selectors
-        sectionSelector: '.fullpage-section'
-        // fixedElements: 'header'
+        sectionSelector: '.fullpage-section',
+        hybrid:true
 
     });
 }
