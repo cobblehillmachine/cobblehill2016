@@ -40,7 +40,7 @@
 
 	<?php $featured_case_studies = new WP_query(array('post_type' => 'Case Studies', 'meta_key' => 'featured_on_homepage', 'meta_value' => 1)); ?>
 	<div class="section small-padding">
-		<h2 class="center relative wide-cont">Recent Work<a class="absolute view-all" href="/work"><img src="<?php echo get_template_directory_uri() ?>/assets/images/view-all.jpg"></a></h2>
+		<h2 class="center relative wide-cont">Recent Work<a id="view-all" class="stateOne" href="/work"><img src="<?php echo get_template_directory_uri() ?>/assets/images/view-all.jpg"></a></h2>
 		<div class="flex between wide-cont">
 		<?php while ( $featured_case_studies->have_posts() ) : $featured_case_studies->the_post();?>
 			

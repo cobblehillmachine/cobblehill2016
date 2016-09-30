@@ -16,7 +16,7 @@ $( window ).load(function() {
 		var target = $(this).attr('href');
 		smoothScroll($(target), 0);
 	})
-
+	// pulse();
 	if ($(window).width() > 990) {
 		
 	} else {
@@ -180,5 +180,12 @@ function navToggle() {
 	})
 }
 
-
+function pulse() {
+	$('#view-all').on('mouseenter', function() {
+		$(this).toggleClass('stateOne stateTwo')
+	})
+	$('#view-all').on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+	    $('#view-all').toggleClass('stateOne stateTwo')
+	});
+}
 
