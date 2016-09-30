@@ -77,20 +77,24 @@
 		<div id="instafeed-first" class=""></div>			
 		<?php $first_post = new WP_query(array('post_type' => 'post', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'ASC')); ?>
 		<?php while ( $first_post->have_posts() ) : $first_post->the_post();?>
-			<a href="<?php the_permalink() ?>" class="center">
+			<a href="<?php the_permalink() ?>" class="center free-wisdom">
+				<img src="<?php echo get_template_directory_uri() ?>/assets/images/free-wisdom-green.jpg">
 				<h3><?php the_title() ?></h3>
-				<span class="accent">Read the post</span>
+				<span class="h4">Read the post</span>
 			</a>
 		<?php endwhile; wp_reset_query() ?>
 		<div id="instafeed-second" class=""></div>
 		
-		<a class="summer-fridays" href="http://summerfridays.com" target=_blank>SUMMER FRIDAYS</a>
+		<a class="summer-fridays" href="http://summerfridays.com" target=_blank>
+			<img src="<?php echo get_template_directory_uri() ?>/assets/images/summer-fridays.jpg">
+		</a>
 		<div id="instafeed-third" class=""></div>
 		<?php $second_post = new WP_query(array('post_type' => 'post', 'posts_per_page' => 1,'offset' => 1, 'orderby' => 'date', 'order' => 'ASC')); ?>
 		<?php while ( $second_post->have_posts() ) : $second_post->the_post();?>
-			<a href="<?php the_permalink() ?>" class="center">
+			<a href="<?php the_permalink() ?>" class="center free-wisdom">
+				<img src="<?php echo get_template_directory_uri() ?>/assets/images/free-wisdom-blue.jpg">
 				<h3><?php the_title() ?></h3>
-				<span class="accent">Read the post</span>
+				<span class="h4">Read the post</span>
 			</a>
 		<?php endwhile; wp_reset_query() ?>
 		<div id="instafeed-fourth" class=""></div>
