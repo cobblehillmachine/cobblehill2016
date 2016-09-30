@@ -3,6 +3,7 @@
 <?php $topics = array('eat', 'drink','shop','explore','stay') ?>
 <?php $i = 0; ?>
 
+
 <div class="hero city-guide-hero" style="background-image:url(<?php the_field('hero_image') ?>)"">
 	<div class="content half absolute white">
 		<h1><?php the_field('intro_headline') ?></h1>

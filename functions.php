@@ -49,6 +49,7 @@ function add_javascript() {
 	wp_enqueue_script( 'instafeed', get_template_directory_uri().'/assets/js/instafeed.js', array('jquery'), null, true );
 	wp_enqueue_script( 'overflow', get_template_directory_uri().'/assets/js/scrolloverflow.min.js', array('jquery'), null, true );
 	wp_enqueue_script( 'fullPage', get_template_directory_uri().'/assets/js/jquery.fullPage.js', array('jquery'), null, true );
+	// wp_enqueue_script( 'transition', get_template_directory_uri().'/assets/js/transition.js', array('jquery'), null, true );
 	wp_enqueue_script( 'general', get_template_directory_uri().'/assets/js/general.js?40', array('jquery', 'instafeed', 'slick', 'fullPage'), null, true );
 }
 

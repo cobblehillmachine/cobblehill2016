@@ -41,6 +41,10 @@ $(document).ajaxComplete( function() {
 	
 })
 
+$(document).on('scroll', function() {
+	// transition();
+})
+
 
 function squareMaker(selector) {
 	var width = selector.width();
@@ -172,6 +176,9 @@ function navToggle() {
 		$('.desktop-nav').slideToggle();
 		$('.hamburger').toggleClass('active');
 		$('header').toggleClass('open');
+		$('.logo').toggleClass('white black');
 	})
 }
+
+
 

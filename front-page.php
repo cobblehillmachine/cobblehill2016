@@ -39,8 +39,8 @@
 
 
 	<?php $featured_case_studies = new WP_query(array('post_type' => 'Case Studies', 'meta_key' => 'featured_on_homepage', 'meta_value' => 1)); ?>
-	<div class=" section ">
-		<h2 class="center">Recent Work</h2>
+	<div class="section small-padding">
+		<h2 class="center relative wide-cont">Recent Work<a class="absolute view-all" href="/work"><img src="<?php echo get_template_directory_uri() ?>/assets/images/view-all.jpg"></a></h2>
 		<div class="flex between wide-cont">
 		<?php while ( $featured_case_studies->have_posts() ) : $featured_case_studies->the_post();?>
 			
@@ -58,13 +58,14 @@
 		</div>
 	</div>
 
-	<div class=" section notop ">
-		<div class="ctas flex stretch wide-cont">
-			<a class="half shop" href="shop">
-				<p>Dress like its summer friday.</p>
+	<div class="section notop small-padding">
+		<div class="ctas flex stretch wide-cont between">
+			<a class="half center shop-cta" href="/shop">
+				<img src="<?php the_field('shop_cta_image') ?>">
+				<p><?php the_field('shop_cta_text') ?></p>
 				<span class="link">visit our store</span>
 			</a>
-			<a class="half city-guide center" href="/city-guides">
+			<a class="half center" href="/city-guides">
 				<img src="<?php the_field('city_guide_cta_image') ?>">
 				<p><?php the_field('city_guide_cta_text') ?></p>
 				<span class="link">Explore our city guides</span>
@@ -73,7 +74,9 @@
 	</div>
 
 
-	<div class="instafeed-wrapper  section notop flex wrap wide-cont stretch">
+<div class=" section notop wide-cont small-padding">
+	<h2 class="center">Vibes</h2>
+	<div class="flex instafeed-wrapper wrap stretch">
 		<div id="instafeed-first" class=""></div>			
 		<?php $first_post = new WP_query(array('post_type' => 'post', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'ASC')); ?>
 		<?php while ( $first_post->have_posts() ) : $first_post->the_post();?>
@@ -104,16 +107,5 @@
 
 </div>
 
-<!-- <script src="<?php echo get_template_directory_uri() ?>/assets/js/whitewater.js"></script>
-<script type="text/javascript">
-	var canvas = document.getElementById('video');
-    var source = '<?php echo get_template_directory_uri() ?>/assets/images/cobble-hill-video-new';
-    var options = {
-        autoplay: true,
-        loop: true,
-        controls: true
-    }
-    var video = new Whitewater(canvas, source, options);
-</script> -->
 	
 <?php get_footer(); ?>
