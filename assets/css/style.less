@@ -209,6 +209,9 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 	p {	font-size: 36px; line-height: 42px;}
 	h4 {	color: @pink; font-size: 16px;}
 	img {	max-width: 48px; margin: 0 auto;margin-bottom: 20px; display: block; }
+	p { position: relative;
+		&:after {	content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-image: linear-gradient(transparent,white);}
+	}
 }
 
 .instafeed-wrapper { position: relative; margin-top: 40px;
