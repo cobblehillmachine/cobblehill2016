@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<h2 class="center">Case Studies</h2>
+<h2 class="center section mid-cont">Case Studies</h2>
 <?php $case_studies = new WP_query(array('post_type' => 'Case Studies')); ?>
 
 

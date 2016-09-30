@@ -9,7 +9,9 @@
 
 get_header();the_post(); ?>
 <div class="page-generic mid-cont">
-	<h2 class="title"><?php the_title() ?></h2>
+	<div class="section center">
+		<h2 class="title"><?php the_title() ?></h2>
+	</div>
 	<div class="content">
 		<?php the_content(); ?>
 	</div>
