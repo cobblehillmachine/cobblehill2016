@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <div id="fullpage">
 	<div class="case-study-page fullpage-section">
-		<div class="inner relative">>
+		<!-- <div class="inner relative"> -->
 			<?php $hero_video = get_field('video_file_name');
 			if ($hero_video) { ?>
 				<div class="videoWrapper">
@@ -18,7 +18,7 @@
 			<div class="absolute">
 				<?php the_field('hero_content') ?>
 			</div>
-		</div>
+		<!-- </div> -->
 	</div>
 	<div class="fullpage-section case-study-page">
 		<div class="flex main wrap">
