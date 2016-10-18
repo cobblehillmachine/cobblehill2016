@@ -1,19 +1,34 @@
 <?php get_header() ?>
 <div id="fullpage">
 	<div class="case-study-page fullpage-section">
-		<div class="videoWrapper">
-			<video data-keepplaying  data-autoplay autoplay="true" loop="true" preload="auto" muted="true">
-			  <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/<?php the_field('video_file_name') ?>.mp4" type="video/mp4">
-			  <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/<?php the_field('video_file_name') ?>.ogv" type="video/ogv">
-			  <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/<?php the_field('video_file_name') ?>.webm" type="video/webm">
-					<!--[if IE]><div style='clear: both; height: 112px; padding:0; position: relative;'><a href="http://www.theie8countdown.com/ie-users-info"><img src="http://www.theie8countdown.com/assets/badge_iecountdown.png" border="0" height="112" width="348" alt="" /></a></div><![endif]-->
-			</video>
-		</div>
+		<div class="inner relative">>
+			<?php $hero_video = get_field('video_file_name');
+			if ($hero_video) { ?>
+				<div class="videoWrapper">
+					<video data-keepplaying  data-autoplay autoplay="true" loop="true" preload="auto" muted="true">
+					  <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/<?php the_field('video_file_name') ?>.mp4" type="video/mp4">
+					  <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/<?php the_field('video_file_name') ?>.ogv" type="video/ogv">
+					  <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/<?php the_field('video_file_name') ?>.webm" type="video/webm">
+							<!--[if IE]><div style='clear: both; height: 112px; padding:0; position: relative;'><a href="http://www.theie8countdown.com/ie-users-info"><img src="http://www.theie8countdown.com/assets/badge_iecountdown.png" border="0" height="112" width="348" alt="" /></a></div><![endif]-->
+					</video>
+				</div>
+			<?php } else { ?>
+				<img src="<?php the_field('hero_image') ?>">
+			<?php } ?>
+			<div class="absolute">
+				<?php the_field('hero_content') ?>
+			</div>
+		</div
 	</div>
 	<div class="fullpage-section case-study-page">
 		<div class="flex main wrap">
-
-			<div class="full-width-text-on-color center section" style="background-color:<?php the_field('full_width_text_with_color_background_color') ?>" data-order="<?php the_field('full_width_text_with_color_order') ?>">
+			<?php $background_image = get_field("full_width_text_with_color_background_image");
+			if ($background_image) { ?>
+				<div class="full-width-text-on-color center section" style="background-image:<?php echo $background_image ?>" data-order="<?php the_field('full_width_text_with_color_order') ?>">
+			<?php } else { ?>
+				<div class="full-width-text-on-color center section" style="background-color:<?php the_field('full_width_text_with_color_background_color') ?>" data-order="<?php the_field('full_width_text_with_color_order') ?>">
+			<?php } ?>
+			
 				<h3 class="h2 skinny-cont"><?php the_field('full_width_text_with_color_text') ?></h3>
 			</div>
 
