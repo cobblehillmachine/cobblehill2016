@@ -18,7 +18,7 @@
 			<div class="absolute">
 				<?php the_field('hero_content') ?>
 			</div>
-		</div
+		</div>
 	</div>
 	<div class="fullpage-section case-study-page">
 		<div class="flex main wrap">
