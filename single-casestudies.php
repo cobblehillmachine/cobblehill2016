@@ -15,7 +15,7 @@
 			<?php } else { ?>
 				<img src="<?php the_field('hero_image') ?>">
 			<?php } ?>
-			<div class="absolute">
+			<div class="absolute hero">
 				<?php the_field('hero_content') ?>
 			</div>
 		<!-- </div> -->
@@ -32,7 +32,7 @@
 				<h3 class="h2 skinny-cont"><?php the_field('full_width_text_with_color_text') ?></h3>
 			</div>
 
-			<div class="side-by-side-images center flex stretch" style="height: 300px" data-order="<?php the_field('side_by_side_images_order') ?>">
+			<div class="side-by-side-images center flex stretch" style="height: 500px" data-order="<?php the_field('side_by_side_images_order') ?>">
 				<div class="half section background-image" style="background-image:url(<?php the_field('side_by_side_images_image_1') ?>)"></div>
 				<div class="half section background-image" style="background-image:url(<?php the_field('side_by_side_images_image_2') ?>)"></div>
 			</div>

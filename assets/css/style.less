@@ -343,10 +343,13 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 	.small-picture {	width: 33%; padding-right: 30px; padding-left: 30px;}
 	p {	line-height: 30px;}
 	h2:after {	content: ''; width: 50px; height: 1px; background-color: black; border: 0; display: block; margin: 20px 0;}
-
 }
 
-.full-width-text-on-color { padding: 150px 5%;
+.absolute.hero {
+	width: 40%; top: 50%; .transform(translate(0, -50%)); right: 5%; min-height: initial;
+}
+
+.full-width-text-on-color { padding: 150px 5%; background-repeat: repeat; background-size: cover; background-position: 50% 50%;
 	h3 {	color: white; margin: 0 auto;}
 }
 
