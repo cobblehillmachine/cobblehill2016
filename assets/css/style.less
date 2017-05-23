@@ -2,7 +2,7 @@
 ////// FONT VARIABLES ////// 
 ////////////////////////////
 
-.body-copy {	font-family: "freight-display-pro",sans-serif; font-style: normal; font-weight: 400;}
+.body-copy {	font-family: "stevie-sans",sans-serif; font-style: normal; font-weight: 400;}
 .detail-font {	font-family: "proxima-nova",sans-serif; font-style: normal; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
 .bold-detail-font {		font-family: "proxima-nova",sans-serif; font-style: normal; font-weight: 700;}
 
@@ -20,8 +20,10 @@
 ////////////////////////////
 
 // change values according to design; max-width of overall content should be around 1600px
-.skinny-cont {	width: 60%; margin: 0 auto; max-width: 960px;}
-.wide-cont {	width: 95%; margin: 0 auto; max-width: 1360px;}
+.skinny-cont {	width: 90%; margin: 0 auto; max-width: 860px;}
+.mid-cont {	width: 90%; margin: 0 auto; max-width: 1100px;}
+.wide-cont {	width: 90%; margin: 0 auto; /* max-width: 1360px; */}
+
 
 
 ////////////////////////////
@@ -62,7 +64,7 @@
 //// LINKS & INPUTS ////////
 ////////////////////////////
 a {	.transition(all 0.2s ease); text-decoration: none; color: inherit; cursor: pointer;
-	&:hover {	color: @pink;}
+	&:hover {	text-decoration: underline;}
 }
 // class for links that should not use universal link styling (link blocks, etc)
 a.link-fix {	color: inherit; text-decoration: none;}
@@ -78,9 +80,9 @@ input[type="text"], input[type="email"], input[type="password"],input[type="tel"
 ////////////////////////////
 //////// HEADINGS //////////
 ////////////////////////////
-h1, .h1 { margin: 0; .body-copy; font-size: 62px;}
-h2, .h2 { margin: 0; .body-copy; font-size: 40px;}
-h3, .h3 { margin: 0; .body-copy; font-size: 32px;}
+h1, .h1 { margin: 0; .body-copy; font-size: 62px; line-height: 62px;}
+h2, .h2 { margin: 0;  .body-copy; font-size: 40px; line-height: 42px;}
+h3, .h3 { margin: 0; font-family: "arno-pro";font-style: normal; font-weight: 400; font-size: 32px;}
 h4, .h4 { margin: 0; .detail-font; font-size: 12px; letter-spacing: 1px;}
 p { margin: 15px auto; font-size: 20px; line-height: 24px;}
 
@@ -182,7 +184,7 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 	.nav {	width: 40%; border-left: 2px solid white; padding: 0 5% 0 90px;
 		li {	font-size: 52px;}
 	}
-	a:hover {	color: @pink;}
+	a:hover {	text-decoration: underline;}
 	i {	font-size: 24px; padding: 0 5px;}
 }
 
@@ -193,14 +195,35 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 	.absolute {	position: absolute; top: 50%; .transform(translate(0, -50%)); left: 50%;
 		p {	line-height: 30px;}
 	}
+	&.services-hero {
+		.absolute {	.transform(translate(-50%, -50%)); max-width: 450px;}
+	}
+	&.team-hero {
+		.absolute {	padding: 50px 5%;}
+	}
+	&.team-member-hero {
+		.absolute {	.transform(translate(-50%, -50%));}
+		h4 {	margin: 15px 0;}
+	}
 	.white * {	color: white;}
 	canvas {	position: absolute; top: 0; left: 50%; .transform(translate(-50%, 0)); height: 100%;}
 }
 
-.videoWrapper {position: absolute; top: 0; bottom: 0; width: 100%; height: 100%;  overflow: hidden;
-	iframe, video {min-width: 100%;  min-height: 100%; width: auto; height: auto;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);	}
+.videoWrapper {/* position: absolute; top: 0; bottom: 0; */ width: 100%; height: 100%;  overflow: hidden;
+	iframe, video { max-width: 95%;width: auto; height: auto;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);	}
+	.skinny-cont{
+		min-height: 990px;
+		height: 100vh;
+		font-family: "arno-pro",serif;
+		p{font-size: 60px;width:100%;margin: auto;line-height: 90px;}
+	}
 }
 
+.two-columns {	-webkit-column-count: 2;  -moz-column-count: 2; column-count: 2; }
+
+.background-image {	background-repeat: no-repeat; background-size: cover; background-position: 50% 50%;}
+
+.third {	width: 31%; margin: 2% 0;}
 
 ////////////////////////////
 ///////// HOMEPAGE /////////
@@ -215,11 +238,13 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 }
 
 .instafeed-wrapper { position: relative; margin-top: 40px;
-	.insta {	background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; display: block; width: 100%; height: 100%}
-	> * {  display: block;width: 25%;
+	.insta {	background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; display: block; width: 100%; height: 100%; width: 10%; height: 9vw; display: inline-block; margin: auto; margin: 3%;
+		&:hover{width: 16%;margin: 0;height: 14.25vw;}
+	}
+	> * {  display: block;width: 98%; margin: auto;
 		img {	display: block;}
 		&#instafeed-second {	width: 50%;
-			.insta {	width: 50%; display: inline-block;}
+			.insta {	width: 300px; height: 300px; display: inline-block;}
 		}
 	}
 	.free-wisdom {padding: 30px 5% 80px;
@@ -235,7 +260,7 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 
 .case-study-homepage, .case-study-archive { width: 32%; display: block; margin-top: 40px;
 	&:hover {	
-		h3 {	color: @pink;}
+		h3 {	text-decoration: underline;}
 	}
 	h3 {	margin-top: 15px; .transition(0.2s all ease); font-size: 14px;}
 	img {	display: block;}
@@ -256,9 +281,14 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 }
 
 
-#view-all { top: 0; right: 0; .transition(all 0.2s ease-in-out); position: absolute;
+#view-all { top: 0; right: 0; .transition(all 0.2s ease-in-out);
 	img {	max-width: 92px;}
-	animation-duration: 0.2s;
+	display: block;
+	width: 10%;
+	margin: auto;
+	font-size: 15px;
+	text-transform: uppercase;
+	animation-duration: 0.3s;
 	animation-name: changewidth;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
@@ -273,9 +303,10 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 }
 
 .ctas {
+	font-family: "brandon-grotesque",sans-serif;
 	.half {	width: 48%;}
-	p {	margin: 30px auto 20px;}
-	span.link {	.detail-font; text-decoration: underline; display: inline-block; padding-bottom: 55px; font-size: 14px; .transition(0.2s all ease);}
+	p {	margin: 30px auto 20px; font-weight: 100;}
+	span.link {	.detail-font; display: inline-block; padding-bottom: 55px; font-weight: 600; font-size: 14px; .transition(0.2s all ease);}
 	a:hover {
 		p {	color: black;}
 	}
@@ -338,19 +369,27 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 		&[data-order="7"] {	order: 7;}
 		&[data-order="8"] {	order: 8;}
 	}
-	.background-image {	background-repeat: no-repeat; background-size: cover; background-position: 50% 50%;}
+	
 	.big-picture {	width: 66%;}
 	.small-picture {	width: 33%; padding-right: 30px; padding-left: 30px;}
 	p {	line-height: 30px;}
 	h2:after {	content: ''; width: 50px; height: 1px; background-color: black; border: 0; display: block; margin: 20px 0;}
 }
 
-.absolute.hero {
-	width: 40%; top: 50%; .transform(translate(0, -50%)); right: 5%; min-height: initial;
+.case-study-hero {	background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;}
+
+.absolute.hero { width: 40%; top: 50%; .transform(translate(0, -50%)); right: 5%; min-height: initial;
+	&.white {	
+		h1, p, h4, a {	color: white;}
+		h2:after {	background-color: white;}
+	}
 }
 
 .full-width-text-on-color { padding: 150px 5%; background-repeat: repeat; background-size: cover; background-position: 50% 50%;
-	h3 {	color: white; margin: 0 auto;}
+	h3 {	.h2; line-height: 48px; color: white; margin: 0 auto; .skinny-cont;}
+	&.black {
+		h3 {	color: black;}
+	}
 }
 
 .two_thirds_images_with_content { position: relative; padding: 10px 0;
@@ -364,6 +403,10 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 
 .full_width_stacked_content_and_image {
 	h2:after {	margin: 20px auto;}
+	&.white {
+		h2, p {	color: white;}
+		h2:after {	background-color: white;}
+	}
 }
 
 .icons {
@@ -371,4 +414,220 @@ header {	position: absolute; top: 0; left: 0; width: 100%; padding: 30px 0; z-in
 	.half {	padding: 0 5%;}
 }
 
+
+////////////////////////////
+///////// SERVICES/ ////////
+////////////////////////////
+
+.service {
+	height: 800px;
+	.content {	width: 50%; padding: 130px 8%;}
+	.background-image {	width: 50%;}
+	&:nth-child(odd) {
+		.content {	order: 1}
+		.background-image {	order: 2;}
+	}
+	p {	margin-bottom: 50px; margin-top: 0; line-height: 30px;}
+	li {	.h4; margin-bottom: 20px; display: block;}
+	h2 {	margin-top: 20px;}
+	h2:after {	content: ''; width: 50px; height: 1px; background-color: black; border: 0; display: block; margin: 20px 0;}
+}
+
+////////////////////////////
+/////////// LOGOs //////////
+////////////////////////////
+
+.logos {
+	.half {	width: 49%; margin-bottom: 2%;}
+}
+
+
+////////////////////////////
+//////// TEAM MEMBERS //////
+////////////////////////////
+
+.team-members {	margin: 2%  auto;
+	h4 {	margin-top: 5px;}
+}
+
+
+
+////////////////////////////
+//////// NEW STUFF /////////
+////////////////////////////
+
+
+.about-holder{
+	.left{
+		width: 55%;
+		display: inline-block;
+		
+		.img-wrapper{
+			width: 48%;
+			padding: 2%;
+			padding-left: 0;
+			img{max-height: 710px;width: 100%;max-width: 485px;}
+			display: inline-block;
+		}	
+	}
+	.right{
+		width: 40%;
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		padding: 0 10%;
+		padding-left: 5%;
+		padding-top: 10%;
+		h2{font-family: "arno-pro",serif;}
+		p{font-family: "stevie-sans",sans-serif;font-weight: 100;line-height: 35px;font-size: 14px;}
+		.line{
+			border-bottom: 1px solid;
+			width: 12%;
+			margin: 6% 0;
+		}
+		span{text-transform: uppercase;font-family: "proxima-nova",sans-serif;font-size: 14px;padding: 8%;}
+		a:nth-child(6){span{padding-left: 0;}}
+	}
+}
+
+footer{
+	background: #f5f5f5;
+	padding: 5% 0;
+	.footer-holder{
+		width: 50%;
+		margin: auto;
+		.img-wrapper{
+			width: 50%;
+			display: inline-block;
+		}
+		.contact-info{
+			display: inline-block;
+			text-align: justify;
+			margin-left: 9%;
+			.line{
+				border-bottom: 1px solid;
+				width: 20%;
+				margin: 10% 0;
+			}
+			h2{
+				font-family: "arno-pro",serif;
+			}
+			p{
+				font-family: "stevie-sans",sans-serif;
+				font-weight: 100;
+				font-size: 16px;
+				color: gray;
+			}
+			i:nth-child(1){
+				padding-left: 0;
+			}
+			i{
+				font-size: 23px;
+				padding: 2% 10%;
+			}
+		}
+	}
+	
+}
+
+.server-subHeader{
+	width: 60%;
+    /* margin: auto; */
+    margin-left: 10%;
+    /* padding: 1%; */
+    margin-bottom: 5%;
+    p{font-family: "stevie-sans",sans-serif;font-weight: 100;line-height: 35px;font-size: 20px;}
+}
+.between{
+	img{
+		max-height: 620px;
+	}
+}
+.imgBox{
+	p{
+		width: 97%;
+		margin: auto;
+		vertical-align: top;
+		font-family: "proxima-nova";
+		text-transform: uppercase;
+		font-size: 16px;
+		padding: 5%;
+	}
+}
+.box-1{
+	width: 30%;
+    position: relative;
+    right: -60%;
+    margin-top: -10%;
+}
+.box-2{
+	width: 30%;
+    position: relative;
+    margin-left: 15%;
+    margin-top: -5%;
+}
+.box-3{
+	width: 30%;
+    position: relative;
+    right: -60%;
+    margin-top: -10%;
+}
+.box-4{
+	width: 35%;
+	position: relative;
+	margin-left: 10%;
+}
+.question-holder{
+	width: 30%;
+	position: relative;
+	left: 62%;
+	margin-top: -20%;
+	margin-bottom: 10%;
+	line-height: 70px;
+	h3{font-family: "proxima-nova",sans-serif;text-transform: uppercase;font-size: 20px;font-weight: 500;}
+	p{font-size: 16px;}
+}
+/*
+.body-wrapper{
+	max-width: 1500px;
+	margin: auto;
+}
+*/
+
+.home{
+	.hero{
+// 		min-height: 990px;
+	}
+}
+
+.menu-main-nav-container{
+	position: absolute;
+	left: 25%;
+	text-align: center;
+	width: 50%;
+	font-family: "proxima-nova",sans-serif;
+	font-weight: 100;
+	li{
+		display: inline-block;
+		padding: 0 5%;
+		text-transform: uppercase;
+	}
+}
+
+.contactBox{
+	padding: 8% 15%;
+	border: 1px solid;
+}
+
+.team-subHeader{
+	p{font-family: "stevie-sans",sans-serif;font-weight: 100;line-height: 35px;font-size: 20px;}
+}
+.team-subSub{
+	padding: 15%;
+	padding-left: 10%;
+	padding-top: 15%;
+	p{font-family: "stevie-sans",sans-serif;font-weight: 100;line-height: 35px;font-size: 14px;}
+	span{text-transform: uppercase;font-family: "proxima-nova",sans-serif;font-size: 14px;padding: 8%;padding-left: 0;}
+	h2{font-family: "arno-pro",serif;}
+}
 

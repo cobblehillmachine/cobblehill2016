@@ -2,15 +2,20 @@ var $ = jQuery.noConflict();
 
 $( window ).load(function() {
 	var windowHeight = $(this).height();
+/*
+	var windowHeight = $(this).height();
 	if ($('#instafeed-first').length > 0) {
 		hpInstagram1();
+/*
 		hpInstagram2();
 		hpInstagram3();
 		hpInstagram4();
+
 	}
-	fullPage();
+*/
+// 	fullPage();
 	navToggle();
-	$('.desktop-nav, .city-guide-hero').css('height', windowHeight);
+	$('.desktop-nav, .city-guide-hero, .services-hero, .team-hero, .team-member-hero, .case-study-hero').css('height', windowHeight);
 	$('.smooth-scroll').on('click', function(e) {
 		e.preventDefault();
 		var target = $(this).attr('href');
@@ -72,22 +77,25 @@ function smoothScroll(element, padding) {
     }, 600);
 }
 
+/*
 function hpInstagram1() {
 	 var feed = new Instafeed({
         accessToken: '49967275.488634b.eab59ab9764f497ab182f5c0926c80fe',
         clientId: '488634b6d1d5439db82f582309be943b',
         get: 'user',
         userId: 49967275,
-        target: 'instafeed-first',
+        target: 'instafeed',
         sortBy: 'most-recent',
-        limit: 1,
+        limit: 18,
         resolution: 'standard_resolution',
         template: '<a class="insta" href="{{link}}" target=_blank style="background-image:url({{image}})"></a>'
 
     });
     feed.run();
 }
+*/
 
+/*
 function hpInstagram2() {
 	 var feed = new Instafeed({
         accessToken: '49967275.488634b.eab59ab9764f497ab182f5c0926c80fe',
@@ -159,6 +167,7 @@ function hpInstagram4() {
     });
     feed.run();
 }
+*/
 
 function fullPage() {
 	$('#fullpage').fullpage({
@@ -188,4 +197,17 @@ function pulse() {
 	    $('#view-all').toggleClass('stateOne stateTwo')
 	});
 }
+
+ var feed = new Instafeed({
+        get: 'user',
+        userId: 49967275,
+        sortBy: 'most-recent',
+        accessToken: '49967275.488634b.eab59ab9764f497ab182f5c0926c80fe',
+        clientId: '488634b6d1d5439db82f582309be943b',
+        resolution: 'standard_resolution',
+        limit: 18,
+        template: '<a class="insta" href="{{link}}" target=_blank style="background-image:url({{image}})"></a>'
+
+    });
+    feed.run();
 

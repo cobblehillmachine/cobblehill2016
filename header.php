@@ -21,7 +21,7 @@
 <!-- END GOOGLE ANALYTICS -->
 
 <!-- TYPEKIT -->
-<script src="https://use.typekit.net/zfu5dxy.js"></script>
+<script src="https://use.typekit.net/efw0clm.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 <!-- END TYPEKIT -->
 
@@ -101,9 +101,13 @@
 				</svg>
 
 			</a></div>
-			<div class="hamburger">
+			<div class="hamburger" style="display: none;">
 				<span></span>
 			</div>
+			<?php wp_nav_menu(array('theme_location'=>'primary')) ?>
+			<a href="/contact"><div class="contactBox">
+				GET IN TOUCH
+			</div></a> 
 		</div>
 	</header>
 	<div class="body-wrapper">	

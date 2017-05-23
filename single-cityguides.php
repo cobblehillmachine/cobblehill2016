@@ -4,7 +4,7 @@
 <?php $i = 0; ?>
 
 
-<div class="hero city-guide-hero" style="background-image:url(<?php the_field('hero_image') ?>)"">
+<div class="hero city-guide-hero" style="background-image:url(<?php the_field('hero_image') ?>)">
 	<div class="content half absolute white">
 		<h1><?php the_field('intro_headline') ?></h1>
 		<?php the_field('intro_text') ?>
@@ -23,9 +23,9 @@
 		<div class="city-guide" id="<?php echo $topic ?>">
 			<div class="flex stretch wrap">
 				<?php if ($i % 2 == 0) { ?>
-					<div class="half background" style="background-image:url(<?php the_field($topic.'_photo') ?>"></div>
+					<div class="half background" style="background-image:url(<?php the_field($topic.'_photo') ?>)"></div>
 				<?php } else { ?>
-					<div class="half mobile background" style="background-image:url(<?php the_field($topic.'_photo') ?>"></div>
+					<div class="half mobile background" style="background-image:url(<?php the_field($topic.'_photo') ?>)"></div>
 				<?php } ?>
 				
 				<div class="half section">
@@ -37,7 +37,7 @@
 					<?php endwhile; ?>
 				</div>
 				<?php if ($i % 2 != 0) { ?>
-					<div class="half background" style="background-image:url(<?php the_field($topic.'_photo') ?>"></div>
+					<div class="half background" style="background-image:url(<?php the_field($topic.'_photo') ?>)"></div>
 				<?php } ?>
 			</div>
 		</div>

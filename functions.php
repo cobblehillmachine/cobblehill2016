@@ -128,7 +128,7 @@ function create_post_type() {
 	);
   	register_post_type( 'Case Studies', $args1);
 
-  	$args1 = array(
+  	$args2 = array(
 		'labels' => array(
 			'name' => __( 'City Guides' ),
 			'singular_name' => __( 'City Guide' )
@@ -139,7 +139,20 @@ function create_post_type() {
 		'rewrite' => array('slug'=>'city-guides'),
 		'supports' => array( 'title', 'thumbnail' )
 	);
-  	register_post_type( 'City Guides', $args1);
+  	register_post_type( 'City Guides', $args2);
+  	
+  	$args3 = array(
+		'labels' => array(
+			'name' => __( 'Team Members' ),
+			'singular_name' => __( 'Team Member' )
+		),
+		'public' => true,
+		'menu_icon' => 'dashicons-admin-users',
+		'publicly_queryable'  => true,
+		'rewrite' => array('slug'=>'team-members'),
+		'supports' => array( 'title', 'thumbnail' )
+	);
+  	register_post_type( 'Team Members', $args3);
 
   	flush_rewrite_rules();
 }
