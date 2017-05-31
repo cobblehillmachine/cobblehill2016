@@ -10,7 +10,7 @@
 		<?php the_field('intro_text') ?>
 		<ul class="flex wrap">
 		<?php foreach ($topics as $topic) { ?>
-			<li><a class="smooth-scroll" href="#<?php echo $topic ?>"><?php echo $topic ?></a></li>
+			<li><a class="smooth-scroll" href="#<?php echo $topic ?>"><img src="<?php the_field($topic.'_icon'); ?>" style="width: 25%;vertical-align: middle;padding: 5%;"/><?php echo $topic ?></a></li>
 		<?php } ?>
 		</ul>
 	</div>

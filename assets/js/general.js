@@ -31,7 +31,8 @@ $( window ).load(function() {
 })
 
 $( document).ready(function() {
-
+	let daBody = $('body').hasClass('page-id-100')
+	if(daBody){articlesFunc()}
 })
 
 $( window ).resize(function() {
@@ -210,4 +211,17 @@ function pulse() {
 
     });
     feed.run();
+    
+    
+function articlesFunc(){
+	let rows = $('.articleRow')
+	for(i = 0; i < rows.length; i++){
+		$(rows[i]).fadeIn(1000)
+		setTimeout(function(){
+			$(rows[i]).fadeIn(2500)
+		}, 2000)
+		
+	}
+}
+    
 

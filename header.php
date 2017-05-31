@@ -11,7 +11,7 @@
 <head>
 <!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
 <title><?php echo site_global_description(); ?></title>
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no" >
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 <?php wp_head(); ?>
@@ -28,6 +28,7 @@
 
 </head>
 <body <?php body_class(); ?>>
+<!--
 	<div class="desktop-nav">
 		<div class="table">
 			<div class="table-cell contact">
@@ -64,6 +65,7 @@
 			</div>
 		</div>
 	</div>
+-->
 	
 	<header>
 		<div class="flex between wide-cont">
@@ -101,9 +103,11 @@
 				</svg>
 
 			</a></div>
+<!--
 			<div class="hamburger" style="display: none;">
 				<span></span>
 			</div>
+-->
 			<?php wp_nav_menu(array('theme_location'=>'primary')) ?>
 			<a href="/contact"><div class="contactBox">
 				GET IN TOUCH

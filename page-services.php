@@ -1,8 +1,9 @@
 <?php get_header() ?>
 
-<div class="hero" style="padding:5%;">
+<div class="hero" style="padding:8%;">
 	<div class="center">
 		<?php the_post_thumbnail() ?>
+		
 	</div>
 </div>
 <div class="server-subHeader">

@@ -70,7 +70,7 @@
 		</div>
 		<?php $white_text = get_field('full_width_stacked_content_and_image_white_text') ?>
 		<div class="full_width_stacked_content_and_image section <?php if ($white_text) { ?> white <?php } ?>" data-order="<?php the_field('full_width_stacked_content_and_image_order') ?>" style="background-color:<?php the_field('full_width_stacked_content_and_image_background_color') ?>">
-			<div class="skinny-cont section notop">
+			<div class="skinny-cont section notop" style="padding-top: 30px;">
 				<?php the_field('full_width_stacked_content_and_image_content') ?>
 			</div>
 			<div class="image-wrapper mid-cont">

@@ -24,6 +24,19 @@
 				<a href="<?php the_field('facebook','options') ?>"><i class="fa fa-facebook-f"></i></a>
 			</div>
 		</div>
+		<div class="contactFooter">
+			<div class="img-wrapper">
+				<img src="<?php the_field('footer_pic','options'); ?>"/>
+			</div>
+			<div class="signupBox">
+				<h2>Get In The Know Tho</h2>
+				<form>
+					<input type="email" placeholder="*Email Address"/>
+					<input type="submit"/>
+				</form>
+			</div>
+		</div>
+		
 	</footer>
 
 	</div> <!-- ENDS BODY WRAPPER (STARTED IN HEADER) -->

@@ -56,7 +56,7 @@
 		</div>
 	</div>
 	<?php $featured_case_studies = new WP_query(array('post_type' => 'Case Studies', 'meta_key' => 'featured_on_homepage', 'meta_value' => 1)); ?>
-	<div class="section small-padding">
+	<div class="section small-padding" style="padding-bottom: 10%;">
 		<h2 class="center relative wide-cont">Recent Work<a id="view-all" href="/work">View All</a></h2>
 		<div class="flex between wide-cont">
 		<?php while ( $featured_case_studies->have_posts() ) : $featured_case_studies->the_post();?>

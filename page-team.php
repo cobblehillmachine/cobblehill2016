@@ -23,6 +23,7 @@
 		<a class="team-member-archive center third" href="<?php the_permalink() ?>">
 			<div class="picture">
 				<?php the_post_thumbnail() ?>
+				<img src="<?php the_field('hover_image') ?>" />
 			</div>
 			<h3 class=""><?php the_title() ?></h3>
 			<h4><?php the_field('title') ?></h4>
@@ -32,7 +33,7 @@
 </div>
 <div>
 	<div class="img-wrapper" style="width: 50%;display: inline-block;">
-		<img src="<?php the_field('bottom_pic'); ?>" />
+		<img src="<?php the_field('bottom_pic'); ?>" style="vertical-align: bottom;"/>
 	</div>
 	<div class="team-subSub"style="width: 49%;display: inline-block;vertical-align: top;">
 		<h2><?php the_field('bottom_title') ?></h2>
